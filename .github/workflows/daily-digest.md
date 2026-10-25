@@ -8,6 +8,9 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
+  
+environment: 
+      name: COPILOT_GITHUB_TOKEN
 
 tools:
   github:
