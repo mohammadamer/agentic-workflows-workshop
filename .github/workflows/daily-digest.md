@@ -9,10 +9,6 @@ permissions:
   issues: read
   pull-requests: read
 
-# Ensure the environment has access to required tokens
-env:
-  COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
-
 tools:
   github:
     toolsets: [default]
