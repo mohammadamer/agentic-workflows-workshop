@@ -8,9 +8,10 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
-  
-environment: 
-      name: COPILOT_GITHUB_TOKEN
+
+# Ensure the environment has access to required tokens
+env:
+  COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
 
 tools:
   github:
@@ -35,6 +36,6 @@ Create a single GitHub issue summarising all open issues and open pull requests 
 3. For each item include: type (issue or PR), number linked as `#N`, title, author (`@login`), and how long it has been open (e.g. "3 days", "5 hours"), computed from its creation time to now.
 4. Create the issue with title `Daily Digest – <date>`. The "Daily Digest – " prefix is added automatically, so provide only today's date in `YYYY-MM-DD` format as the title.
 5. Issue body structure:
-   - A summary line with the total count of open items, split into issues and pull requests.
-   - One `###` section per label with its item count, listing items as a table or bullet list with the fields above.
+    - A summary line with the total count of open items, split into issues and pull requests.
+    - One `###` section per label with its item count, listing items as a table or bullet list with the fields above.
 6. If nothing is open, still create the issue stating that there is nothing open.
